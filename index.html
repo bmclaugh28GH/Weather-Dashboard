@@ -2,6 +2,7 @@
 <html lang="en">
 
 <!-- **************************************** -->
+<!-- head -->
 <!-- **************************************** -->
 <head>
 
@@ -18,25 +19,83 @@
 </head>
 
 <!-- **************************************** -->
+<!-- body -->
 <!-- **************************************** -->
 <body>
 
-  <div>
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-3 px-1 position-fixed" id="sticky-sidebar"> 
+
+            <div id="citySearch">
+               <br><br><br>
+               <h4>Search for a city:</h4> 
+               <input type="text" id="cityCountry" placeholder="city, country">
+               <button type="button" class="btn btn-secondary">
+                  <span class="glyphicon glyphicon-search"></span>Search 
+               </button>
+               <hr>
+
+            </div>
+
+         </div>
+         <div class="col offset-3" id="main">
+            
+            <h1><br>Weather Dashboard</h1>
+            <div id="day0Weather">
+               <h4 id="cityAndDate">Atlanta (8/15/2019)</h4>
+               <h5>Temperature: <span id="day0Temp"></span> &#176;F</h5>
+               <h5>Humidity: <span id="day0Humidity"></span>%</h5>
+               <h5>Wind Speed: <span id="day0WindSpeed"></span> mph</h5>
+               <h5>UV Index: <span id="day0UVIndex"></span></h5>
+               
+            </div>
+
+            <div id="fiveDayForecast">
+               <h4 id="fDFHeader">5-Day Forecast</h4>
+
+               <div class="row" id="fDRow">
+                  <div class="col fDCol"><span id="day1">day1</span>
+                     <br><br><br><br><br>
+                     <h6>Temperature: <span id="day1Temp"></span> &#176;F</h6>
+                     <h6>Humidity: <span id="day1Humidity"></span>%</h6>
+                  </div>
+                  <div class="col fDCol"><span id="day2">day2</span>
+                     <br><br><br><br><br>
+                     <h6>Temperature: <span id="day2Temp"></span> &#176;F</h6>
+                     <h6>Humidity: <span id="day2Humidity"></span>%</h6>
+                  </div>
+                  <div class="col fDCol"><span id="day3">day3</span>
+                     <br><br><br><br><br>
+                     <h6>Temperature: <span id="day3Temp"></span> &#176;F</h6>
+                     <h6>Humidity: <span id="day3Humidity"></span>%</h6>
+                  </div>
+                  <div class="col fDCol"><span id="day4">day4</span>
+                     <br><br><br><br><br>
+                     <h6>Temperature: <span id="day4Temp"></span> &#176;F</h6>
+                     <h6>Humidity: <span id="day4Humidity"></span>%</h6>
+                  </div>
+                  <div class="col fDCol"><span id="day5">day5</span>
+                     <br><br><br><br><br>
+                     <h6>Temperature: <span id="day5Temp"></span> &#176;F</h6>
+                     <h6>Humidity: <span id="day5Humidity"></span>%</h6>
+                  </div>
 
 
+               </div>
+            </div>
 
-  </div>
-
-
-
-
-
-
+         </div>
+      </div>
+   </div>
 
    <!--**************************************-->
    <!--js links-->
    <!--**************************************-->
+
    <script src="https://code.jquery.com/jquery.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+   <script src="./assets/script/myUtilities.js"></script>
    <script src="./assets/script/script.js"></script>
 
 <!-- **************************************** -->

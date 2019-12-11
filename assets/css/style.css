@@ -1,0 +1,53 @@
+
+*{
+   font-family:Arial, Helvetica, sans-serif;    
+}
+body{
+   background-color:#ecf9f2;
+}
+#sticky-sidebar{
+   height:100%; 
+   background-color: #9fdfbf;
+}
+#citySearch{
+   color:#26734d; 
+   text-align:center; 
+}
+#main{
+}
+h1{
+   height:150px; 
+   background-color: #39ac73; 
+   text-align:center; 
+   color:#ecf9f2; 
+}
+#day0Weather{
+   border: 1px solid lightgray; 
+   height:280px; 
+}
+#cityAndDate, #fDFHeader{
+   font-weight: 600;
+}
+#cityAndDate, h5, #fDFHeader{
+   color:#26734d; 
+   margin-top:25px;
+   margin-left:20px; 
+}
+h5{
+   margin-top:25px; 
+}
+#fDRow{
+   color:#26734d; 
+   margin-top:15px;
+   margin-left:20px; 
+   margin-right:20px; 
+}
+.fDCol{
+   text-align:left; 
+   margin:10px; 
+   margin-top:5px; 
+   border:solid lightgray 1px; 
+   height:220px; 
+   background-color:#9fdfbf; 
+   padding-top:5px;
+}
