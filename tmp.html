@@ -1,5 +1,65 @@
-                  <div class="col-md-2 col-md-offset-3">1</div>
-                  <div class="col-md-2">2</div>
-                  <div class="col-md-2">3</div>
-                  <div class="col-md-2">4</div>
-                  <div class="col-md-2">5</div>
+<!DOCTYPE html>
+<head>
+   <title>WD Tester</title>
+</head>
+<body>
+
+
+   <!--**************************************-->
+   <!--js links-->
+   <!--**************************************-->
+
+   <script src="https://code.jquery.com/jquery.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+   <script src="./assets/script/myUtilities.js"></script>
+   <script src="./assets/script/dataStructures.js"></script>
+   <!--<script src="./assets/script/script.js"></script>-->
+
+   <script>
+      var city = {
+         "city": "Barcelona",  
+         "country": "Spain", 
+         "user-entry": "Barcelona, Spain",
+         "search-dttm": "12/10/2019"
+      }; 
+      cities.push (city); 
+      city = {
+         "city": "Munich",  
+         "country": "Germany", 
+         "user-entry": "Munich, Germany",
+         "search-dttm": "12/10/2019"
+      }; 
+      cities.push(city); 
+      city = {
+         "city": "Lima",  
+         "country": "Peru", 
+         "user-entry": "Lima, Peru",
+         "search-dttm": "12/10/2019"
+      }; 
+      cities.push (city); 
+      city = {
+         "city": "Tokyo",  
+         "country": "Japan", 
+         "user-entry": "Tokyo, Japan",
+         "search-dttm": "12/10/2019"
+      }; 
+      cities.push (city); 
+      city = {
+         "city": "Nairobi",  
+         "country": "Kenya", 
+         "user-entry": "Nairobi, Kenya",
+         "search-dttm": "12/10/2019"
+      }; 
+      cities.push (city); 
+      var cityStr = JSON.stringify(cities);
+      localStorage.setItem(wDBKey,cityStr); 
+
+   </script>
+   <!-- ************************************* -->
+   <!-- ************************************* -->
+
+<!-- **************************************** -->
+<!-- **************************************** -->
+
+</body>
+

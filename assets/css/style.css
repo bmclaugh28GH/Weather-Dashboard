@@ -13,6 +13,20 @@ body{
    color:#26734d; 
    text-align:center; 
 }
+#cityCountry{
+   color:#26734d;
+}
+.citySel{
+   border: 1px solid lightgray;
+   background-color:white; 
+   padding:2px;   
+   width:80%; 
+   margin:0 auto; 
+   text-align:left; 
+}
+
+/* ******************************************* */
+
 #main{
 }
 h1{
@@ -25,12 +39,15 @@ h1{
    border: 1px solid lightgray; 
    height:280px; 
 }
-#cityAndDate, #fDFHeader{
+h4{
+   padding-top:10px; 
+}
+#city, #day0, #fDFHeader{
    font-weight: 600;
 }
-#cityAndDate, h5, #fDFHeader{
+#city, #day0, h5, #fDFHeader{
    color:#26734d; 
-   margin-top:25px;
+   margin-top:30px;
    margin-left:20px; 
 }
 h5{

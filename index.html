@@ -28,13 +28,18 @@
          <div class="col-3 px-1 position-fixed" id="sticky-sidebar"> 
 
             <div id="citySearch">
+
                <br><br><br>
                <h4>Search for a city:</h4> 
                <input type="text" id="cityCountry" placeholder="city, country">
-               <button type="button" class="btn btn-secondary">
+               <button type="button" class="btn btn-secondary" id="searchBtn">
                   <span class="glyphicon glyphicon-search"></span>Search 
                </button>
                <hr>
+
+               <!-- empty div into which I'll put "buttons". I'll attach the click listener to this-->
+               <div id="citySelList">
+               </div> 
 
             </div>
 
@@ -43,7 +48,7 @@
             
             <h1><br>Weather Dashboard</h1>
             <div id="day0Weather">
-               <h4 id="cityAndDate">Atlanta (8/15/2019)</h4>
+               <h4 id="cityAndDate"><span id="city">Atlanta</span> <span id="day0">8/15/2019<span></h4>
                <h5>Temperature: <span id="day0Temp"></span> &#176;F</h5>
                <h5>Humidity: <span id="day0Humidity"></span>%</h5>
                <h5>Wind Speed: <span id="day0WindSpeed"></span> mph</h5>
@@ -96,6 +101,7 @@
    <script src="https://code.jquery.com/jquery.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
    <script src="./assets/script/myUtilities.js"></script>
+   <script src="./assets/script/dataStructures.js"></script>
    <script src="./assets/script/script.js"></script>
 
 <!-- **************************************** -->
