@@ -14,3 +14,7 @@ var cities = [];
 // **********************************************
  
 var wDBKey = 'w_db'; 
+
+var APIKey = "166a433c57516f51dfab1f7edaed8413"; 
+
+

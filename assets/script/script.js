@@ -9,9 +9,61 @@ var cityCountryElem = $("#cityCountry");
 
 var newCity={}; 
 
+var cityElem = $("#city");
+var day0TempElem = $("#day0Temp"); 
+var day0HumidityElem = $("#day0Humidity"); 
+var day0WindSpeedElem = $("#day0WindSpeed"); 
+var day0UVIndexElem = $("#day0UVIndex"); 
+
 // **********************************************
 // functions
 // **********************************************
+
+// **********************************************
+// get current weather 
+// **********************************************
+function getCurrentWeather (city, country){
+
+   var queryURL = "https://api.openweathermap.org/data/2.5/weather?q="
+      + city + "," + country + "&units=imperial&appid=" + APIKey;
+
+   console.log (queryURL); 
+
+   $.ajax({
+      url: queryURL,
+      method: "GET"
+   }).then(function(response) {
+
+      //alert ("base " + response.base); 
+
+      day0TempElem.text(response.main.temp);  
+      day0HumidityElem.text(response.main.humidity);  
+      day0WindSpeedElem.text(response.wind.speed);  
+      day0UVIndexElem.text('????'); 
+
+   })
+}; 
+
+// **********************************************
+// get 5 day forecast 
+// **********************************************
+function getFiveDayForecast (city, country){
+
+   var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q="
+      + city + "," + country + "&mode=json&units=imperial&appid=" + APIKey;
+
+   console.log (queryURL); 
+
+   $.ajax({
+      url: queryURL,
+      method: "GET"
+   }).then(function(response) {
+
+      //alert('cod' + response.cod); 
+
+      alert('temp ' + response.list[0].main.temp);
+   })
+}; 
 
 // **********************************************
 // getCity 
@@ -80,7 +132,12 @@ function init () {
 $("#searchBtn").on("click", function () {
 
    event.preventDefault(); 
-   alert (cityCountryElem.val()); 
+
+   city = getCity(cityCountryElem.val());
+   country = getCountry(cityCountryElem.val());
+   cityElem.text(city); 
+   getCurrentWeather(city, country);
+   getFiveDayForecast(city, country); 
 
 }); // search button 
 
@@ -96,7 +153,6 @@ $("#citySelList").on("click", function () {
    cityCountryElem.val(cityBtn.textContent); 
 
    var str = cityBtn.textContent; 
-   alert (str.indexOf(',') - 1);
    newCity = {
       "city": getCity(str), 
       "country": getCountry(str), 
