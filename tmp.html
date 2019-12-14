@@ -16,6 +16,7 @@
    <!--<script src="./assets/script/script.js"></script>-->
 
    <script>
+      alert ("here"); 
       var city = {
          "city": "Barcelona",  
          "country": "Spain", 
@@ -51,8 +52,24 @@
          "search-dttm": "12/10/2019"
       }; 
       cities.push (city); 
-      var cityStr = JSON.stringify(cities);
-      localStorage.setItem(wDBKey,cityStr); 
+      var citiesStr = JSON.stringify(cities);
+      //localStorage.setItem(wDBKey,citiesStr); 
+
+      var oneCity = {
+         "city": "Nairobi",  
+         "country": "Kenya", 
+         "user-entry": "Nairobi, Kenya",
+         "search-dttm": "12/10/2019"
+      }; 
+      var oneCityStr = JSON.stringify(oneCity);
+
+      if (citiesStr.indexOf(oneCityStr) > 0){
+         alert ("found it"); 
+      }
+      else {
+         alert ("not found");
+      }
+
 
    </script>
    <!-- ************************************* -->

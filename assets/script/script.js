@@ -18,6 +18,7 @@ var day0UVIndexElem = $("#day0UVIndex");
 
 var lat = 0; 
 var lon = 0; 
+var siteFound = true; 
 
 // **********************************************
 // functions
@@ -190,10 +191,17 @@ $("#searchBtn").on("click", function () {
 
    event.preventDefault(); 
 
+   siteFound=true; 
    city = getCity(cityCountryElem.val());
    country = getCountry(cityCountryElem.val());
    cityElem.text(city); 
    getCurrentWeather(city, country);
+
+   if (siteFound==false){
+      alert ("City not found. Please retry"); 
+      return; 
+   }
+
    getFiveDayForecast(city, country); 
 
 }); // search button 
@@ -219,6 +227,20 @@ $("#citySelList").on("click", function () {
    console.log(newCity); 
 
 }); // city/country list  
+
+// **********************************************
+// ajax 404 
+// **********************************************
+$( document ).ajaxError(function() {
+
+   //alert( "Triggered ajaxError handler." );
+
+   if (siteFound == true){
+      alert ("City not found. Please retry"); 
+   }
+   siteFound = false; 
+
+});
 
 // **********************************************
 // main
