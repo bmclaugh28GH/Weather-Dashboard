@@ -81,6 +81,28 @@ function getCurrentWeather (city, country){
       lon = response.coord.lon; 
       getUVIndex();
 
+      // find the city in the array. splice() it if its already on the array 
+      // Hmmm..maybe don't break out of this. Sort of a double check against duplicate entries. 
+      for (i=0;i<cities.length;i++){
+         if (cities[i].city === city && cities[i].country === country){
+            cities.splice (i, 1);
+            //break; 
+         }
+      }
+
+      // always add it 
+      var newCity = {
+         "city": city, 
+         "country": country, 
+         "user-entry": cityCountryElem.val(), 
+         "search-dttm": moment().format('MM/DD/YYYY')
+      }
+
+      cities.unshift(newCity);
+      loadCities(); 
+
+      // and finally, store it 
+      localStorage.setItem(wDBKey, JSON.stringify(cities)); 
    })
 }; //getCurrentWeather
 
@@ -142,15 +164,17 @@ function getCountry (str){
 // **********************************************
 function loadCities () {
 
+   citySelListElem.empty();
+
    // loop on em, add em to the page 
    var newDiv; 
 
-   // do the for b
    for (i=0; i<cities.length; i++){
 
       newDiv = $("<div class='citySel'>");
       newDiv.text(cities[i].city + ', ' + cities[i].country);
       newDiv.attr("data-attr",cities[i].city + ', ' + cities[i].country); 
+      newDiv.attr("data-index",i); 
       citySelListElem.append (newDiv); 
    }
 } // loadCities
@@ -177,7 +201,6 @@ function init () {
       loadCities(); 
 
    }
-
 }; // init 
 
 // **********************************************
@@ -192,8 +215,9 @@ $("#searchBtn").on("click", function () {
    event.preventDefault(); 
 
    siteFound=true; 
-   city = getCity(cityCountryElem.val());
-   country = getCountry(cityCountryElem.val());
+   city = getCity(cityCountryElem.val()).charAt(0).toUpperCase() + getCity(cityCountryElem.val()).slice(1);
+   country = getCountry(cityCountryElem.val()).charAt(0).toUpperCase() + getCountry(cityCountryElem.val()).slice(1);
+   //country = getCountry(cityCountryElem.val());
    cityElem.text(city); 
    getCurrentWeather(city, country);
 
