@@ -6,7 +6,7 @@ Weather dashboard seems mostly intended to demonstrate that we can make Ajax cal
 
 # Implementation 
 
-My implementation uses moment.js to get current date and +1 thru +5. 
+My implementation uses moment.js to get current date and days +1 thru +5. 
 
 It uses bootstrap for a structure like this: 
 
@@ -33,3 +33,5 @@ At click of SEARCH, I'll gather the city and country string, parse it, and get t
 This could get ugly also in recognizing duplicates. How do I recognize Paris,France is the same as Paris, France? We need a database. Lol. 
 
 Not going to stress too much about these last 2....
+
+191216: I overlooked the requirement to load the most recent search at page open. Fixed that today. 

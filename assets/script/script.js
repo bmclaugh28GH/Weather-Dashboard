@@ -201,6 +201,13 @@ function init () {
       loadCities(); 
 
    }
+   if (cities.length > 0) {
+      //alert (cities[0].city + ', ' + cities[0].country);
+      cityCountryElem.val (cities[0].city + ', ' + cities[0].country); 
+      $("#searchBtn").trigger("click");
+       
+   }
+
 }; // init 
 
 // **********************************************
