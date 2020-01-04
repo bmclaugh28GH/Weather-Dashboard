@@ -29,7 +29,7 @@ var siteFound = true;
 // **********************************************
 function getUVIndex (){
 
-   var queryURL = "http://api.openweathermap.org/data/2.5/uvi?lat="
+   var queryURL = "https://api.openweathermap.org/data/2.5/uvi?lat="
       + lat + "&lon=" + lon + "&appid=" + APIKey;
 
    console.log('uv');
@@ -70,7 +70,7 @@ function getCurrentWeather (city, country){
       method: "GET"
    }).then(function(response) {
 
-      day0IconElem.attr("src",  "http://openweathermap.org/img/wn/"
+      day0IconElem.attr("src",  "https://openweathermap.org/img/wn/"
             + response.weather[0].icon 
             + "@2x.png");
       day0TempElem.text(Math.round(response.main.temp));  
@@ -114,7 +114,7 @@ function getCurrentWeather (city, country){
 // **********************************************
 function getFiveDayForecast (city, country){
 
-   var queryURL = "http://api.openweathermap.org/data/2.5/forecast/daily?q="
+   var queryURL = "https://api.openweathermap.org/data/2.5/forecast/daily?q="
       + city + "," + country + "&mode=json&units=imperial&cnt=6&appid=" + APIKey;
 
    //console.log (queryURL); 
@@ -132,7 +132,7 @@ function getFiveDayForecast (city, country){
             //alert('icon ' + responseList[i].weather[0].icon);
          }
          dayElem = $("#day"+i+"Icon");
-         dayElem.attr("src", "http://openweathermap.org/img/wn/"
+         dayElem.attr("src", "https://openweathermap.org/img/wn/"
             + responseList[i].weather[0].icon 
             + "@2x.png");
          dayElem = $("#day"+i+"Temp"); 
