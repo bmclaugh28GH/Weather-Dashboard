@@ -149,6 +149,9 @@ function getFiveDayForecast (city, country){
 // getCity 
 // **********************************************
 function getCity (str){
+   if (str.indexOf(', ') == -1 && str.length > 0) {
+      return str; 
+   } 
    return str.slice(0, str.indexOf(',')).trim (); 
 }; //getCity
 
@@ -156,6 +159,10 @@ function getCity (str){
 // getCountry 
 // **********************************************
 function getCountry (str){
+   if (str.indexOf(', ') == -1 && str.length > 0) {
+      return 'US'; 
+   } 
+
    return str.substr(str.indexOf(',') + 1).trim ();
 }; //getCountry
 
@@ -222,8 +229,12 @@ $("#searchBtn").on("click", function () {
    event.preventDefault(); 
 
    siteFound=true; 
+
    city = getCity(cityCountryElem.val()).charAt(0).toUpperCase() + getCity(cityCountryElem.val()).slice(1);
    country = getCountry(cityCountryElem.val()).charAt(0).toUpperCase() + getCountry(cityCountryElem.val()).slice(1);
+
+   alert ('city ' + city + ' country ' + country); 
+
    //country = getCountry(cityCountryElem.val());
    cityElem.text(city); 
    getCurrentWeather(city, country);
