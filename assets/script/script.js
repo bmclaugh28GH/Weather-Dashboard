@@ -233,7 +233,7 @@ $("#searchBtn").on("click", function () {
    city = getCity(cityCountryElem.val()).charAt(0).toUpperCase() + getCity(cityCountryElem.val()).slice(1);
    country = getCountry(cityCountryElem.val()).charAt(0).toUpperCase() + getCountry(cityCountryElem.val()).slice(1);
 
-   alert ('city ' + city + ' country ' + country); 
+   //alert ('city ' + city + ' country ' + country); 
 
    //country = getCountry(cityCountryElem.val());
    cityElem.text(city); 
